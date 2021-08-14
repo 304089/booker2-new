@@ -1,0 +1,17 @@
+<%= form_with model:book,local:true do |f| %>
+  <div class="form-group">
+    <label>Title</label>
+    <%= f.text_field :title, class: 'form-control book_title' %>
+  </div>
+  <div class="form-group">
+    <label>Opinion</label>
+    <%= f.text_area :body, class: 'form-control book_body' %>
+  </div>
+  <div class="form-group">
+    <% if book.title.blank? %>
+      <%= f.submit "Create Book",class: 'btn btn-success' %>
+    <% else %>
+      <%= f.submit "Update Book",class: 'btn btn-success' %>
+    <% end %>
+  </div>
+<% end %>
